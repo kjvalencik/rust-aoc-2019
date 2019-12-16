@@ -173,19 +173,23 @@ impl Add<Velocity> for Velocity {
 	}
 }
 
+fn gcd(a: u64, b: u64) -> u64 {
+	if a == 0 {
+		return b.max(1);
+	}
+
+	gcd(b % a, a)
+}
+
 // This is horribly inefficient, but simple and works
 fn lcm(a: usize, b: usize, c: usize) -> u64 {
 	let a = a as u64;
 	let b = b as u64;
 	let c = c as u64;
-	let n = a.min(b).min(c) as u64;
-	let mut i = n;
 
-	while i % a != 0 || i % b != 0 || i % c != 0 {
-		i += n;
-	}
+	let d = (a * b) / gcd(a, b);
 
-	i
+	(d * c) / gcd(d, c)
 }
 
 fn main() {
