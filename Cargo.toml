@@ -12,4 +12,6 @@ members = [
 	"calendar/day-10",
 	"calendar/day-11",
 	"calendar/day-12",
+	"calendar/day-13",
+	"calendar/day-14",
 ]

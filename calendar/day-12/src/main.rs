@@ -181,7 +181,6 @@ fn gcd(a: u64, b: u64) -> u64 {
 	gcd(b % a, a)
 }
 
-// This is horribly inefficient, but simple and works
 fn lcm(a: usize, b: usize, c: usize) -> u64 {
 	let a = a as u64;
 	let b = b as u64;
